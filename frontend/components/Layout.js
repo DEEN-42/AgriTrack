@@ -30,7 +30,7 @@ import { logout } from '../store/features/authSlice';
 const drawerWidth = 260;
 
 const menuItems = [
-  { text: 'Dashboard', icon: <DashboardIcon />, path: '/' },
+  { text: 'Dashboard', icon: <DashboardIcon />, path: '/admin/dashboard' },
   { text: 'Live Monitoring', icon: <MapIcon />, path: '/monitoring' },
   { text: 'Reports', icon: <AnalyticsIcon />, path: '/reports' },
   { text: 'Subsidy Management', icon: <PaymentIcon />, path: '/subsidy' },

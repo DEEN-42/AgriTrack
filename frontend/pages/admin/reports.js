@@ -4,6 +4,9 @@ import {
   Grid,
   Paper,
   Typography,
+  Fade,
+  Slide,
+  keyframes,
 } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -20,6 +23,18 @@ import {
   LegendComponent,
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
+
+// Keyframe animations
+const slideUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 echarts.use([
   LineChart,

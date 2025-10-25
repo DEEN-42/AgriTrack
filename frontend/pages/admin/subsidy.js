@@ -10,6 +10,10 @@ import {
   Button,
   Grid,
   CircularProgress,
+  Fade,
+  Slide,
+  Zoom,
+  keyframes,
 } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import Layout from '../../components/Layout';
@@ -19,6 +23,23 @@ import {
   approveClaim,
   rejectClaim,
 } from '../../store/features/claimsSlice';
+
+// Keyframe animations
+const pulse = keyframes`
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.02); }
+`;
+
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 function Subsidy() {
   const dispatch = useDispatch();

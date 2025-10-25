@@ -10,9 +10,35 @@ import {
   Typography,
   Alert,
   CircularProgress,
+  Fade,
+  Slide,
+  Zoom,
+  keyframes,
 } from '@mui/material';
 import { login } from '../../store/features/authSlice';
 import { authAPI } from '../../services/api';
+
+// Keyframe animations
+const float = keyframes`
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+`;
+
+const pulse = keyframes`
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+`;
+
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export default function VerifyOTP() {
   const router = useRouter();
@@ -93,6 +119,7 @@ export default function VerifyOTP() {
         justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden',
+        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -103,74 +130,109 @@ export default function VerifyOTP() {
           backgroundImage: 'url(https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'brightness(0.4)',
-          zIndex: 0,
-        },
-        '&::after': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(17,24,39,0.8) 100%)',
+          opacity: 0.15,
           zIndex: 0,
         },
       }}
     >
-      <Card
-        elevation={0}
+      {/* Animated background particles */}
+      {[...Array(15)].map((_, i) => (
+        <Box
+          key={i}
+          sx={{
+            position: 'absolute',
+            width: '4px',
+            height: '4px',
+            borderRadius: '50%',
+            bgcolor: 'rgba(59, 130, 246, 0.3)',
+            animation: `${pulse} ${2 + Math.random() * 3}s ease-in-out infinite`,
+            animationDelay: `${Math.random() * 2}s`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            zIndex: 0,
+          }}
+        />
+      ))}
+
+      {/* Floating gradient orb */}
+      <Box
         sx={{
-          width: '100%',
-          maxWidth: 500,
-          mx: 2,
-          borderRadius: 4,
-          bgcolor: 'rgba(255, 255, 255, 0.95)',
-          backdropFilter: 'blur(40px)',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          position: 'relative',
-          zIndex: 1,
+          position: 'absolute',
+          width: '600px',
+          height: '600px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)',
+          animation: `${float} 6s ease-in-out infinite`,
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 0,
         }}
-      >
+      />
+
+      <Slide direction="up" in timeout={800}>
+        <Card
+          elevation={0}
+          sx={{
+            width: '100%',
+            maxWidth: 520,
+            mx: 2,
+            borderRadius: 4,
+            bgcolor: 'rgba(255, 255, 255, 0.98)',
+            backdropFilter: 'blur(40px)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            position: 'relative',
+            zIndex: 1,
+            animation: `${slideIn} 0.8s ease-out`,
+          }}
+        >
         <CardContent sx={{ p: 5 }}>
           <Box sx={{ textAlign: 'center', mb: 4 }}>
             {/* Icon */}
-            <Box
-              sx={{
-                width: 80,
-                height: 80,
-                borderRadius: 3,
-                bgcolor: 'rgba(17, 24, 39, 0.05)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                mx: 'auto',
-                mb: 3,
-              }}
-            >
-              <Typography variant="h2" sx={{ fontSize: '2.5rem' }}>
-                📱
-              </Typography>
-            </Box>
+            <Zoom in timeout={1000}>
+              <Box
+                sx={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: 3,
+                  background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  mx: 'auto',
+                  mb: 3,
+                  boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)',
+                  animation: `${pulse} 2s ease-in-out infinite`,
+                }}
+              >
+                <Typography variant="h2" sx={{ fontSize: '2.5rem' }}>
+                  📱
+                </Typography>
+              </Box>
+            </Zoom>
 
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 700,
-                color: '#111827',
-                mb: 1.5,
-                letterSpacing: '-0.5px',
-              }}
-            >
-              Verify OTP
-            </Typography>
-            <Typography variant="body1" sx={{ color: '#6b7280', fontWeight: 500, mb: 0.5 }}>
-              We've sent a 6-digit code to
-            </Typography>
-            <Typography variant="h6" sx={{ fontWeight: 700, color: '#111827' }}>
-              +91 {phone}
-            </Typography>
+            <Fade in timeout={1200}>
+              <Box>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 700,
+                    color: '#111827',
+                    mb: 1.5,
+                    letterSpacing: '-0.5px',
+                  }}
+                >
+                  Verify OTP
+                </Typography>
+                <Typography variant="body1" sx={{ color: '#6b7280', fontWeight: 500, mb: 0.5 }}>
+                  We've sent a 6-digit code to
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#3b82f6' }}>
+                  +91 {phone}
+                </Typography>
+              </Box>
+            </Fade>
           </Box>
 
           {error && (
@@ -236,16 +298,16 @@ export default function VerifyOTP() {
             disabled={loading || otp.length !== 6}
             sx={{
               py: 2,
-              bgcolor: '#111827',
+              background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
               fontWeight: 600,
               fontSize: '1rem',
               textTransform: 'none',
               borderRadius: 2.5,
-              boxShadow: '0 10px 25px rgba(17, 24, 39, 0.3)',
+              boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)',
               mb: 2.5,
               '&:hover': {
-                bgcolor: '#000000',
-                boxShadow: '0 15px 35px rgba(17, 24, 39, 0.4)',
+                background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                boxShadow: '0 15px 35px rgba(59, 130, 246, 0.4)',
                 transform: 'translateY(-2px)',
               },
               '&:active': {
@@ -254,6 +316,7 @@ export default function VerifyOTP() {
               '&:disabled': {
                 bgcolor: '#e5e7eb',
                 color: '#9ca3af',
+                background: 'none',
               },
               transition: 'all 0.2s ease',
             }}
@@ -288,11 +351,11 @@ export default function VerifyOTP() {
                 disabled={loading}
                 sx={{
                   fontWeight: 600,
-                  color: '#111827',
+                  color: '#3b82f6',
                   textTransform: 'none',
                   fontSize: '0.938rem',
                   '&:hover': {
-                    bgcolor: 'rgba(17, 24, 39, 0.05)',
+                    bgcolor: 'rgba(59, 130, 246, 0.1)',
                   },
                 }}
               >
@@ -312,8 +375,8 @@ export default function VerifyOTP() {
               py: 1.5,
               borderRadius: 2.5,
               '&:hover': {
-                bgcolor: 'rgba(107, 114, 128, 0.1)',
-                color: '#111827',
+                bgcolor: 'rgba(59, 130, 246, 0.1)',
+                color: '#3b82f6',
               },
             }}
           >
@@ -321,6 +384,7 @@ export default function VerifyOTP() {
           </Button>
         </CardContent>
       </Card>
+      </Slide>
     </Box>
   );
 }

@@ -14,10 +14,19 @@ import {
   Checkbox,
   Grid,
   CircularProgress,
+  Fade,
+  Slide,
+  keyframes,
 } from '@mui/material';
 import Layout from '../../components/Layout';
 import WithAuth from '../../components/WithAuth';
 import { fetchData } from '../../store/features/dataSlice';
+
+// Keyframe animations
+const pulse = keyframes`
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+`;
 
 // Dynamic import for monitoring map
 const MonitoringMap = dynamic(
