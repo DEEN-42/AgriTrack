@@ -178,7 +178,7 @@ export default function Login() {
         justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+        background: 'linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d3250 100%)',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -189,18 +189,18 @@ export default function Login() {
           backgroundImage: 'url(https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.15,
+          opacity: 0.08,
           zIndex: 0,
         },
         '&::after': {
           content: '""',
           position: 'absolute',
-          top: '-50%',
-          right: '-50%',
-          width: '100%',
-          height: '100%',
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
-          animation: `${float} 6s ease-in-out infinite`,
+          top: '-20%',
+          right: '-20%',
+          width: '80%',
+          height: '80%',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)',
+          animation: `${float} 8s ease-in-out infinite`,
           zIndex: 0,
         },
       }}
@@ -363,49 +363,43 @@ export default function Login() {
 
           {/* Right Side - Login Card */}
           <Slide direction="left" in timeout={800}>
-            <Box sx={{ flex: 1, minWidth: 300, maxWidth: 500, animation: `${slideInRight} 0.8s ease-out` }}>
+            <Box sx={{ flex: 1, minWidth: 300, maxWidth: 520, animation: `${slideInRight} 0.8s ease-out` }}>
               <Card
                 elevation={0}
                 sx={{
-                  borderRadius: 5,
+                  borderRadius: 6,
                   overflow: 'visible',
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.1) 100%)',
-                  backdropFilter: 'blur(30px) saturate(180%)',
-                  WebkitBackdropFilter: 'blur(30px) saturate(180%)',
-                  boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 0 80px rgba(59, 130, 246, 0.15)',
-                  border: '2px solid rgba(255, 255, 255, 0.3)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%)',
+                  backdropFilter: 'blur(40px) saturate(180%)',
+                  WebkitBackdropFilter: 'blur(40px) saturate(180%)',
+                  boxShadow: `
+                    0 0 0 1px rgba(255, 255, 255, 0.1),
+                    0 20px 40px -10px rgba(0, 0, 0, 0.4),
+                    0 40px 80px -20px rgba(0, 0, 0, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2)
+                  `,
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
+                  transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                   position: 'relative',
                   '&::before': {
                     content: '""',
                     position: 'absolute',
                     top: 0,
-                    left: 0,
-                    right: 0,
-                    height: '2px',
-                    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
-                    opacity: 0.6,
-                  },
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    top: -2,
-                    left: -2,
-                    right: -2,
-                    bottom: -2,
-                    background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 197, 253, 0.2))',
-                    borderRadius: 5,
-                    zIndex: -1,
-                    opacity: 0,
-                    transition: 'opacity 0.4s ease',
+                    left: '10%',
+                    right: '10%',
+                    height: '1px',
+                    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)',
+                    opacity: 0.5,
                   },
                   '&:hover': {
-                    boxShadow: '0 40px 80px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45), 0 0 120px rgba(59, 130, 246, 0.25)',
-                    transform: 'translateY(-10px) scale(1.01)',
-                    border: '2px solid rgba(255, 255, 255, 0.4)',
-                    '&::after': {
-                      opacity: 1,
-                    },
+                    boxShadow: `
+                      0 0 0 1px rgba(255, 255, 255, 0.2),
+                      0 30px 60px -10px rgba(0, 0, 0, 0.5),
+                      0 50px 100px -20px rgba(59, 130, 246, 0.2),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.3)
+                    `,
+                    transform: 'translateY(-8px)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
                   },
                 }}
               >
@@ -413,8 +407,8 @@ export default function Login() {
                 <Box 
                   sx={{ 
                     bgcolor: 'transparent',
-                    pt: 3,
-                    px: 3,
+                    pt: 4,
+                    px: 4,
                   }}
                 >
                   <Tabs
@@ -422,31 +416,32 @@ export default function Login() {
                     onChange={handleTabChange}
                     variant="fullWidth"
                     sx={{
-                      minHeight: 48,
+                      minHeight: 56,
                       '& .MuiTabs-flexContainer': {
-                        gap: 1,
+                        gap: 1.5,
                       },
                       '& .MuiTab-root': {
                         textTransform: 'none',
-                        fontWeight: 600,
-                        fontSize: '0.938rem',
-                        minHeight: 48,
-                        color: 'rgba(255, 255, 255, 0.7)',
-                        borderRadius: 2,
-                        transition: 'all 0.2s ease',
-                        background: 'rgba(255, 255, 255, 0.05)',
+                        fontWeight: 700,
+                        fontSize: '0.95rem',
+                        minHeight: 56,
+                        color: 'rgba(255, 255, 255, 0.6)',
+                        borderRadius: 3,
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        background: 'rgba(255, 255, 255, 0.03)',
                         backdropFilter: 'blur(10px)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         '&:hover': {
-                          bgcolor: 'rgba(255, 255, 255, 0.1)',
+                          bgcolor: 'rgba(255, 255, 255, 0.08)',
                           color: 'rgba(255, 255, 255, 0.9)',
+                          borderColor: 'rgba(255, 255, 255, 0.15)',
                         },
                       },
                       '& .Mui-selected': {
                         color: 'white',
-                        background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
-                        boxShadow: '0 8px 16px rgba(59, 130, 246, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2)',
-                        border: '1px solid rgba(59, 130, 246, 0.5)',
+                        background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.8) 0%, rgba(37, 99, 235, 0.8) 100%)',
+                        boxShadow: '0 8px 20px rgba(59, 130, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+                        border: '1px solid rgba(59, 130, 246, 0.4)',
                       },
                       '& .MuiTabs-indicator': {
                         display: 'none',
@@ -459,7 +454,7 @@ export default function Login() {
                 </Box>
 
                 {/* Form Content */}
-                <CardContent sx={{ p: 4.5, pt: 4, bgcolor: 'transparent' }}>
+                <CardContent sx={{ p: 5, pt: 4, bgcolor: 'transparent' }}>
                   {/* Error Alert */}
                   {error && (
                     <Alert 
@@ -484,17 +479,18 @@ export default function Login() {
                   {/* Admin Login Form */}
                   {tabValue === 1 ? (
                     <Box component="form" onSubmit={handleAdminLogin}>
-                      <Box sx={{ mb: 4, textAlign: 'center' }}>
+                      <Box sx={{ mb: 4.5, textAlign: 'center' }}>
                         <Typography 
-                          variant="h4" 
+                          variant="h3" 
                           sx={{ 
-                            fontWeight: 900, 
+                            fontWeight: 800, 
                             color: 'white', 
-                            mb: 1.5,
-                            letterSpacing: '-0.5px',
-                            background: 'linear-gradient(135deg, #ffffff 0%, #93c5fd 100%)',
+                            mb: 2,
+                            letterSpacing: '-1px',
+                            background: 'linear-gradient(135deg, #ffffff 0%, #60a5fa 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
+                            filter: 'drop-shadow(0 0 30px rgba(59, 130, 246, 0.3))',
                           }}
                         >
                           Welcome Back
@@ -502,9 +498,10 @@ export default function Login() {
                         <Typography 
                           variant="body1" 
                           sx={{ 
-                            color: 'rgba(255, 255, 255, 0.75)',
-                            fontSize: '1rem',
-                            fontWeight: 500,
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            fontSize: '1.05rem',
+                            fontWeight: 400,
+                            letterSpacing: '0.2px',
                           }}
                         >
                           Sign in to your admin account
@@ -515,11 +512,11 @@ export default function Login() {
                         <Typography 
                           variant="body2" 
                           sx={{ 
-                            fontWeight: 700, 
-                            mb: 2.5, 
-                            color: 'rgba(255, 255, 255, 0.9)', 
-                            fontSize: '0.875rem', 
-                            letterSpacing: '1px',
+                            fontWeight: 600, 
+                            mb: 2, 
+                            color: 'rgba(255, 255, 255, 0.85)', 
+                            fontSize: '0.85rem', 
+                            letterSpacing: '1.5px',
                             textTransform: 'uppercase',
                           }}
                         >
@@ -532,31 +529,31 @@ export default function Login() {
                           disabled={loading}
                           sx={{ 
                             '& .MuiOutlinedInput-root': {
-                              borderRadius: 3,
-                              background: 'rgba(255, 255, 255, 0.08)',
+                              borderRadius: 2.5,
+                              background: 'rgba(255, 255, 255, 0.06)',
                               backdropFilter: 'blur(10px)',
                               color: 'white',
-                              fontSize: '1.05rem',
+                              fontSize: '1rem',
                               fontWeight: 500,
                               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                               '& fieldset': {
-                                borderColor: 'rgba(255, 255, 255, 0.25)',
-                                borderWidth: 2,
+                                borderColor: 'rgba(255, 255, 255, 0.15)',
+                                borderWidth: 1.5,
                               },
                               '&:hover': {
-                                background: 'rgba(255, 255, 255, 0.12)',
-                                transform: 'translateY(-2px)',
+                                background: 'rgba(255, 255, 255, 0.09)',
+                                transform: 'translateY(-1px)',
                                 '& fieldset': {
-                                  borderColor: 'rgba(59, 130, 246, 0.6)',
+                                  borderColor: 'rgba(59, 130, 246, 0.5)',
                                 },
                               },
                               '&.Mui-focused': {
-                                background: 'rgba(255, 255, 255, 0.15)',
-                                boxShadow: '0 0 0 4px rgba(59, 130, 246, 0.25), 0 8px 16px rgba(0, 0, 0, 0.2)',
-                                transform: 'translateY(-2px)',
+                                background: 'rgba(255, 255, 255, 0.1)',
+                                boxShadow: '0 0 0 3px rgba(59, 130, 246, 0.15)',
+                                transform: 'translateY(-1px)',
                                 '& fieldset': {
-                                  borderColor: '#3b82f6',
-                                  borderWidth: 2,
+                                  borderColor: 'rgba(59, 130, 246, 0.7)',
+                                  borderWidth: 1.5,
                                 },
                               },
                               '& input': {
@@ -564,29 +561,29 @@ export default function Login() {
                               },
                             },
                             '& input::placeholder': {
-                              color: 'rgba(255, 255, 255, 0.4)',
+                              color: 'rgba(255, 255, 255, 0.35)',
                               opacity: 1,
                             },
                           }}
-                          placeholder="Enter your email"
+                          placeholder="Enter your email or username"
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position="start" sx={{ marginLeft: '4px' }}>
-                                <Email sx={{ color: '#60a5fa', fontSize: 20 }} />
+                                <Email sx={{ color: '#60a5fa', fontSize: 19 }} />
                               </InputAdornment>
                             ),
                           }}
                         />
                       </Box>
-                      <Box sx={{ mb: 3.5 }}>
+                      <Box sx={{ mb: 3 }}>
                         <Typography 
                           variant="body2" 
                           sx={{ 
-                            fontWeight: 700, 
-                            mb: 2.5, 
-                            color: 'rgba(255, 255, 255, 0.9)', 
-                            fontSize: '0.875rem', 
-                            letterSpacing: '1px',
+                            fontWeight: 600, 
+                            mb: 2, 
+                            color: 'rgba(255, 255, 255, 0.85)', 
+                            fontSize: '0.85rem', 
+                            letterSpacing: '1.5px',
                             textTransform: 'uppercase',
                           }}
                         >
@@ -600,31 +597,31 @@ export default function Login() {
                           disabled={loading}
                           sx={{ 
                             '& .MuiOutlinedInput-root': {
-                              borderRadius: 3,
-                              background: 'rgba(255, 255, 255, 0.08)',
+                              borderRadius: 2.5,
+                              background: 'rgba(255, 255, 255, 0.06)',
                               backdropFilter: 'blur(10px)',
                               color: 'white',
-                              fontSize: '1.05rem',
+                              fontSize: '1rem',
                               fontWeight: 500,
                               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                               '& fieldset': {
-                                borderColor: 'rgba(255, 255, 255, 0.25)',
-                                borderWidth: 2,
+                                borderColor: 'rgba(255, 255, 255, 0.15)',
+                                borderWidth: 1.5,
                               },
                               '&:hover': {
-                                background: 'rgba(255, 255, 255, 0.12)',
-                                transform: 'translateY(-2px)',
+                                background: 'rgba(255, 255, 255, 0.09)',
+                                transform: 'translateY(-1px)',
                                 '& fieldset': {
-                                  borderColor: 'rgba(59, 130, 246, 0.6)',
+                                  borderColor: 'rgba(59, 130, 246, 0.5)',
                                 },
                               },
                               '&.Mui-focused': {
-                                background: 'rgba(255, 255, 255, 0.15)',
-                                boxShadow: '0 0 0 4px rgba(59, 130, 246, 0.25), 0 8px 16px rgba(0, 0, 0, 0.2)',
-                                transform: 'translateY(-2px)',
+                                background: 'rgba(255, 255, 255, 0.1)',
+                                boxShadow: '0 0 0 3px rgba(59, 130, 246, 0.15)',
+                                transform: 'translateY(-1px)',
                                 '& fieldset': {
-                                  borderColor: '#3b82f6',
-                                  borderWidth: 2,
+                                  borderColor: 'rgba(59, 130, 246, 0.7)',
+                                  borderWidth: 1.5,
                                 },
                               },
                               '& input': {
@@ -632,7 +629,7 @@ export default function Login() {
                               },
                             },
                             '& input::placeholder': {
-                              color: 'rgba(255, 255, 255, 0.4)',
+                              color: 'rgba(255, 255, 255, 0.35)',
                               opacity: 1,
                             },
                           }}
@@ -640,7 +637,7 @@ export default function Login() {
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position="start" sx={{ marginLeft: '4px' }}>
-                                <Lock sx={{ color: '#60a5fa', fontSize: 20 }} />
+                                <Lock sx={{ color: '#60a5fa', fontSize: 19 }} />
                               </InputAdornment>
                             ),
                             endAdornment: (
@@ -665,61 +662,36 @@ export default function Login() {
                         size="large"
                         disabled={loading}
                         sx={{
-                          py: 2.5,
+                          py: 2.2,
                           background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
-                          fontWeight: 700,
-                          fontSize: '1.05rem',
+                          fontWeight: 600,
+                          fontSize: '1rem',
                           textTransform: 'none',
-                          borderRadius: 3,
+                          borderRadius: 2.5,
                           position: 'relative',
                           overflow: 'hidden',
-                          boxShadow: '0 12px 28px rgba(59, 130, 246, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
-                          border: '1px solid rgba(59, 130, 246, 0.5)',
+                          boxShadow: '0 8px 20px rgba(59, 130, 246, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2)',
+                          border: '1px solid rgba(59, 130, 246, 0.4)',
                           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                          '&::before': {
-                            content: '""',
-                            position: 'absolute',
-                            top: 0,
-                            left: '-100%',
-                            width: '100%',
-                            height: '100%',
-                            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
-                            transition: 'left 0.5s ease',
-                          },
                           '&:hover': {
                             background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                            boxShadow: '0 16px 36px rgba(59, 130, 246, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4)',
-                            transform: 'translateY(-3px) scale(1.02)',
-                            '&::before': {
-                              left: '100%',
-                            },
+                            boxShadow: '0 12px 28px rgba(59, 130, 246, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
+                            transform: 'translateY(-2px)',
                           },
                           '&:active': {
-                            transform: 'translateY(-1px) scale(1.01)',
+                            transform: 'translateY(0px)',
                           },
                           '&:disabled': {
-                            background: 'rgba(255, 255, 255, 0.1)',
+                            background: 'rgba(255, 255, 255, 0.08)',
                             color: 'rgba(255, 255, 255, 0.4)',
                             boxShadow: 'none',
                           },
                         }}
                       >
                         {loading ? (
-                          <CircularProgress size={26} sx={{ color: 'white' }} />
+                          <CircularProgress size={24} sx={{ color: 'white' }} />
                         ) : (
-                          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                            <span>Sign In</span>
-                            <Box
-                              component="span"
-                              sx={{
-                                display: 'inline-flex',
-                                fontSize: '1.2rem',
-                                animation: `${float} 2s ease-in-out infinite`,
-                              }}
-                            >
-                              →
-                            </Box>
-                          </Box>
+                          'Sign In'
                         )}
                       </Button>
                       
@@ -727,19 +699,19 @@ export default function Login() {
                         sx={{ 
                           mt: 3, 
                           p: 2.5, 
-                          background: 'rgba(255, 255, 255, 0.08)',
+                          background: 'rgba(255, 255, 255, 0.05)',
                           backdropFilter: 'blur(10px)',
-                          borderRadius: 2.5, 
-                          border: '1px solid rgba(255, 255, 255, 0.15)',
+                          borderRadius: 2, 
+                          border: '1px solid rgba(255, 255, 255, 0.1)',
                         }}
                       >
-                        <Typography variant="caption" sx={{ color: 'white', display: 'block', mb: 1, fontWeight: 600 }}>
+                        <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.85)', display: 'block', mb: 1.5, fontWeight: 600, fontSize: '0.8rem' }}>
                           💡 Demo Credentials
                         </Typography>
-                        <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)', display: 'block', fontFamily: 'monospace', fontSize: '0.75rem' }}>
+                        <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.6)', display: 'block', fontFamily: 'monospace', fontSize: '0.75rem' }}>
                           Email: admin@agritrack.com
                         </Typography>
-                        <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)', display: 'block', fontFamily: 'monospace', fontSize: '0.75rem' }}>
+                        <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.6)', display: 'block', fontFamily: 'monospace', fontSize: '0.75rem' }}>
                           Password: admin123
                         </Typography>
                       </Box>
@@ -747,18 +719,18 @@ export default function Login() {
                   ) : (
                     // Farmer/Owner Login Form
                     <Box>
-                      <Box sx={{ mb: 4, textAlign: 'center' }}>
+                      <Box sx={{ mb: 4.5, textAlign: 'center' }}>
                         <Typography 
-                          variant="h4" 
+                          variant="h3" 
                           sx={{ 
-                            fontWeight: 900, 
+                            fontWeight: 800, 
                             color: 'white', 
-                            mb: 1.5,
-                            letterSpacing: '-0.5px',
-                            background: 'linear-gradient(135deg, #ffffff 0%, #93c5fd 100%)',
+                            mb: 2,
+                            letterSpacing: '-1px',
+                            background: 'linear-gradient(135deg, #ffffff 0%, #60a5fa 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            textShadow: '0 0 30px rgba(59, 130, 246, 0.3)',
+                            filter: 'drop-shadow(0 0 30px rgba(59, 130, 246, 0.3))',
                           }}
                         >
                           Get Started
@@ -766,9 +738,10 @@ export default function Login() {
                         <Typography 
                           variant="body1" 
                           sx={{ 
-                            color: 'rgba(255, 255, 255, 0.75)',
-                            fontSize: '1rem',
-                            fontWeight: 500,
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            fontSize: '1.05rem',
+                            fontWeight: 400,
+                            letterSpacing: '0.2px',
                           }}
                         >
                           Book agricultural machinery in seconds
@@ -776,76 +749,62 @@ export default function Login() {
                       </Box>
 
                       {/* Role Selection */}
-                      <Box sx={{ mb: 3.5 }}>
+                      <Box sx={{ mb: 4 }}>
                         <Typography 
                           variant="body2" 
                           sx={{ 
-                            fontWeight: 700, 
+                            fontWeight: 600, 
                             mb: 2.5, 
-                            color: 'rgba(255, 255, 255, 0.9)', 
-                            fontSize: '0.875rem', 
-                            letterSpacing: '1px',
+                            color: 'rgba(255, 255, 255, 0.85)', 
+                            fontSize: '0.813rem', 
+                            letterSpacing: '1.5px',
                             textTransform: 'uppercase',
                           }}
                         >
-                          I am a
+                          Select Your Role
                         </Typography>
-                        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2.5 }}>
+                        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
                           <Button
                             fullWidth
                             variant={role === 'farmer' ? 'contained' : 'outlined'}
                             onClick={() => setRole('farmer')}
                             sx={{
-                              py: 3,
+                              py: 2.5,
                               textTransform: 'none',
-                              fontWeight: 700,
-                              fontSize: '1rem',
-                              borderRadius: 3,
+                              fontWeight: 600,
+                              fontSize: '0.95rem',
+                              borderRadius: 2.5,
                               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                               position: 'relative',
                               overflow: 'hidden',
                               ...(role === 'farmer' && {
-                                background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%)',
                                 color: 'white',
-                                boxShadow: '0 10px 20px rgba(59, 130, 246, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
-                                border: '1px solid rgba(59, 130, 246, 0.5)',
-                                '&::before': {
-                                  content: '""',
-                                  position: 'absolute',
-                                  top: 0,
-                                  left: '-100%',
-                                  width: '100%',
-                                  height: '100%',
-                                  background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
-                                  transition: 'left 0.5s ease',
-                                },
+                                boxShadow: '0 8px 20px rgba(59, 130, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+                                border: '1px solid rgba(59, 130, 246, 0.4)',
                                 '&:hover': {
-                                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                                  transform: 'translateY(-3px) scale(1.02)',
-                                  boxShadow: '0 15px 30px rgba(59, 130, 246, 0.5)',
-                                  '&::before': {
-                                    left: '100%',
-                                  },
+                                  background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(29, 78, 216, 0.95) 100%)',
+                                  transform: 'translateY(-2px)',
+                                  boxShadow: '0 12px 28px rgba(59, 130, 246, 0.45)',
                                 },
                               }),
                               ...(role !== 'farmer' && {
-                                borderColor: 'rgba(255, 255, 255, 0.25)',
+                                borderColor: 'rgba(255, 255, 255, 0.2)',
                                 color: 'rgba(255, 255, 255, 0.7)',
-                                borderWidth: 2,
-                                background: 'rgba(255, 255, 255, 0.05)',
+                                borderWidth: 1.5,
+                                background: 'rgba(255, 255, 255, 0.03)',
                                 backdropFilter: 'blur(10px)',
                                 '&:hover': {
-                                  background: 'rgba(255, 255, 255, 0.12)',
-                                  borderColor: 'rgba(59, 130, 246, 0.6)',
+                                  background: 'rgba(255, 255, 255, 0.08)',
+                                  borderColor: 'rgba(59, 130, 246, 0.5)',
                                   color: 'white',
-                                  transform: 'translateY(-3px) scale(1.02)',
-                                  boxShadow: '0 8px 16px rgba(59, 130, 246, 0.3)',
+                                  transform: 'translateY(-2px)',
                                 },
                               }),
                             }}
                           >
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
-                              <span style={{ fontSize: '1.25rem' }}>🌾</span>
+                              <span style={{ fontSize: '1.1rem' }}>🌾</span>
                               <span>Farmer</span>
                             </Box>
                           </Button>
@@ -854,71 +813,57 @@ export default function Login() {
                             variant={role === 'owner' ? 'contained' : 'outlined'}
                             onClick={() => setRole('owner')}
                             sx={{
-                              py: 3,
+                              py: 2.5,
                               textTransform: 'none',
-                              fontWeight: 700,
-                              fontSize: '1rem',
-                              borderRadius: 3,
+                              fontWeight: 600,
+                              fontSize: '0.95rem',
+                              borderRadius: 2.5,
                               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                               position: 'relative',
                               overflow: 'hidden',
                               ...(role === 'owner' && {
-                                background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%)',
                                 color: 'white',
-                                boxShadow: '0 10px 20px rgba(59, 130, 246, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
-                                border: '1px solid rgba(59, 130, 246, 0.5)',
-                                '&::before': {
-                                  content: '""',
-                                  position: 'absolute',
-                                  top: 0,
-                                  left: '-100%',
-                                  width: '100%',
-                                  height: '100%',
-                                  background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
-                                  transition: 'left 0.5s ease',
-                                },
+                                boxShadow: '0 8px 20px rgba(59, 130, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+                                border: '1px solid rgba(59, 130, 246, 0.4)',
                                 '&:hover': {
-                                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                                  transform: 'translateY(-3px) scale(1.02)',
-                                  boxShadow: '0 15px 30px rgba(59, 130, 246, 0.5)',
-                                  '&::before': {
-                                    left: '100%',
-                                  },
+                                  background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(29, 78, 216, 0.95) 100%)',
+                                  transform: 'translateY(-2px)',
+                                  boxShadow: '0 12px 28px rgba(59, 130, 246, 0.45)',
                                 },
                               }),
                               ...(role !== 'owner' && {
-                                borderColor: 'rgba(255, 255, 255, 0.25)',
+                                borderColor: 'rgba(255, 255, 255, 0.2)',
                                 color: 'rgba(255, 255, 255, 0.7)',
-                                borderWidth: 2,
-                                background: 'rgba(255, 255, 255, 0.05)',
+                                borderWidth: 1.5,
+                                background: 'rgba(255, 255, 255, 0.03)',
                                 backdropFilter: 'blur(10px)',
                                 '&:hover': {
-                                  background: 'rgba(255, 255, 255, 0.12)',
-                                  borderColor: 'rgba(59, 130, 246, 0.6)',
+                                  background: 'rgba(255, 255, 255, 0.08)',
+                                  borderColor: 'rgba(59, 130, 246, 0.5)',
                                   color: 'white',
-                                  transform: 'translateY(-3px) scale(1.02)',
-                                  boxShadow: '0 8px 16px rgba(59, 130, 246, 0.3)',
+                                  transform: 'translateY(-2px)',
                                 },
                               }),
                             }}
                           >
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
-                              <span style={{ fontSize: '1.25rem' }}>🏢</span>
+                              <span style={{ fontSize: '1.1rem' }}>🏢</span>
                               <span>Owner</span>
                             </Box>
                           </Button>
                         </Box>
                       </Box>
 
-                      <Box sx={{ mb: 3 }}>
+                      <Box sx={{ mb: 3.5 }}>
                         <Typography 
                           variant="body2" 
                           sx={{ 
-                            fontWeight: 700, 
-                            mb: 2.5, 
-                            color: 'rgba(255, 255, 255, 0.9)', 
-                            fontSize: '0.875rem', 
-                            letterSpacing: '1px',
+                            fontWeight: 600, 
+                            mb: 2, 
+                            color: 'rgba(255, 255, 255, 0.85)', 
+                            fontSize: '0.813rem', 
+                            letterSpacing: '1.5px',
                             textTransform: 'uppercase',
                           }}
                         >
@@ -931,32 +876,32 @@ export default function Login() {
                           disabled={loading}
                           sx={{ 
                             '& .MuiOutlinedInput-root': {
-                              borderRadius: 3,
-                              background: 'rgba(255, 255, 255, 0.08)',
+                              borderRadius: 2.5,
+                              background: 'rgba(255, 255, 255, 0.06)',
                               backdropFilter: 'blur(10px)',
                               color: 'white',
-                              fontSize: '1.05rem',
+                              fontSize: '1rem',
                               fontWeight: 500,
                               paddingLeft: 0,
                               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                               '& fieldset': {
-                                borderColor: 'rgba(255, 255, 255, 0.25)',
-                                borderWidth: 2,
+                                borderColor: 'rgba(255, 255, 255, 0.15)',
+                                borderWidth: 1.5,
                               },
                               '&:hover': {
-                                background: 'rgba(255, 255, 255, 0.12)',
-                                transform: 'translateY(-2px)',
+                                background: 'rgba(255, 255, 255, 0.09)',
+                                transform: 'translateY(-1px)',
                                 '& fieldset': {
-                                  borderColor: 'rgba(59, 130, 246, 0.6)',
+                                  borderColor: 'rgba(59, 130, 246, 0.5)',
                                 },
                               },
                               '&.Mui-focused': {
-                                background: 'rgba(255, 255, 255, 0.15)',
-                                boxShadow: '0 0 0 4px rgba(59, 130, 246, 0.25), 0 8px 16px rgba(0, 0, 0, 0.2)',
-                                transform: 'translateY(-2px)',
+                                background: 'rgba(255, 255, 255, 0.1)',
+                                boxShadow: '0 0 0 3px rgba(59, 130, 246, 0.15)',
+                                transform: 'translateY(-1px)',
                                 '& fieldset': {
-                                  borderColor: '#3b82f6',
-                                  borderWidth: 2,
+                                  borderColor: 'rgba(59, 130, 246, 0.7)',
+                                  borderWidth: 1.5,
                                 },
                               },
                               '& input': {
@@ -964,14 +909,14 @@ export default function Login() {
                               },
                             },
                             '& input::placeholder': {
-                              color: 'rgba(255, 255, 255, 0.4)',
+                              color: 'rgba(255, 255, 255, 0.35)',
                               opacity: 1,
                             },
                             '& .MuiInputAdornment-root': {
                               marginRight: 0,
                             },
                           }}
-                          placeholder="Enter 10-digit mobile number"
+                          placeholder="Enter your 10-digit number"
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position="start" sx={{ marginLeft: 0, marginRight: 0 }}>
@@ -981,17 +926,17 @@ export default function Login() {
                                     alignItems: 'center',
                                     gap: 1,
                                     px: 2,
-                                    py: 1.9,
+                                    py: 1.75,
                                     ml: -0.1,
-                                    borderRadius: '10px 0 0 10px',
-                                    background: 'rgba(59, 130, 246, 0.2)',
+                                    borderRadius: '8px 0 0 8px',
+                                    background: 'rgba(59, 130, 246, 0.15)',
                                     backdropFilter: 'blur(10px)',
-                                    borderRight: '1px solid rgba(59, 130, 246, 0.3)',
+                                    borderRight: '1px solid rgba(59, 130, 246, 0.25)',
                                     height: '100%',
                                   }}
                                 >
-                                  <Phone sx={{ color: '#60a5fa', fontSize: 20 }} />
-                                  <Typography sx={{ color: 'white', fontWeight: 700, fontSize: '1rem' }}>
+                                  <Phone sx={{ color: '#60a5fa', fontSize: 19 }} />
+                                  <Typography sx={{ color: 'white', fontWeight: 600, fontSize: '0.95rem' }}>
                                     +91
                                   </Typography>
                                 </Box>
@@ -1007,68 +952,43 @@ export default function Login() {
                         onClick={handleSendOTP}
                         disabled={loading}
                         sx={{
-                          py: 2.5,
+                          py: 2.2,
                           background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
-                          fontWeight: 700,
-                          fontSize: '1.05rem',
+                          fontWeight: 600,
+                          fontSize: '1rem',
                           textTransform: 'none',
-                          borderRadius: 3,
+                          borderRadius: 2.5,
                           position: 'relative',
                           overflow: 'hidden',
-                          boxShadow: '0 12px 28px rgba(59, 130, 246, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
-                          border: '1px solid rgba(59, 130, 246, 0.5)',
+                          boxShadow: '0 8px 20px rgba(59, 130, 246, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2)',
+                          border: '1px solid rgba(59, 130, 246, 0.4)',
                           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                          '&::before': {
-                            content: '""',
-                            position: 'absolute',
-                            top: 0,
-                            left: '-100%',
-                            width: '100%',
-                            height: '100%',
-                            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
-                            transition: 'left 0.5s ease',
-                          },
                           '&:hover': {
                             background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                            boxShadow: '0 16px 36px rgba(59, 130, 246, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4)',
-                            transform: 'translateY(-3px) scale(1.02)',
-                            '&::before': {
-                              left: '100%',
-                            },
+                            boxShadow: '0 12px 28px rgba(59, 130, 246, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
+                            transform: 'translateY(-2px)',
                           },
                           '&:active': {
-                            transform: 'translateY(-1px) scale(1.01)',
+                            transform: 'translateY(0px)',
                           },
                           '&:disabled': {
-                            background: 'rgba(255, 255, 255, 0.1)',
+                            background: 'rgba(255, 255, 255, 0.08)',
                             color: 'rgba(255, 255, 255, 0.4)',
                             boxShadow: 'none',
                           },
                         }}
                       >
                         {loading ? (
-                          <CircularProgress size={26} sx={{ color: 'white' }} />
+                          <CircularProgress size={24} sx={{ color: 'white' }} />
                         ) : (
-                          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                            <span>Send OTP</span>
-                            <Box
-                              component="span"
-                              sx={{
-                                display: 'inline-flex',
-                                fontSize: '1.2rem',
-                                animation: `${float} 2s ease-in-out infinite`,
-                              }}
-                            >
-                              →
-                            </Box>
-                          </Box>
+                          'Send OTP'
                         )}
                       </Button>
 
                       {/* Signup Links */}
-                      <Divider sx={{ my: 3.5, borderColor: 'rgba(255, 255, 255, 0.15)' }} />
+                      <Divider sx={{ my: 3, borderColor: 'rgba(255, 255, 255, 0.1)' }} />
                       <Box sx={{ textAlign: 'center' }}>
-                        <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 1.5, fontWeight: 500 }}>
+                        <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.65)', mb: 1.5, fontWeight: 500, fontSize: '0.875rem' }}>
                           Don't have an account?
                         </Typography>
                         <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -1079,7 +999,7 @@ export default function Login() {
                                   fontWeight: 600,
                                   color: '#60a5fa',
                                   textDecoration: 'none',
-                                  fontSize: '0.875rem',
+                                  fontSize: '0.85rem',
                                   transition: 'all 0.2s ease',
                                   '&:hover': { 
                                     color: '#93c5fd',
@@ -1098,7 +1018,7 @@ export default function Login() {
                                   fontWeight: 600,
                                   color: '#60a5fa',
                                   textDecoration: 'none',
-                                  fontSize: '0.875rem',
+                                  fontSize: '0.85rem',
                                   transition: 'all 0.2s ease',
                                   '&:hover': { 
                                     color: '#93c5fd',
@@ -1119,7 +1039,7 @@ export default function Login() {
 
               {/* Footer */}
               <Box sx={{ textAlign: 'center', mt: 4 }}>
-                <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem' }}>
                   © 2025 AgriTrack CRM. All rights reserved.
                 </Typography>
               </Box>
