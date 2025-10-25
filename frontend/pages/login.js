@@ -559,12 +559,19 @@ export default function Login() {
                                   borderWidth: 2,
                                 },
                               },
+                              '& input': {
+                                paddingLeft: '14px',
+                              },
+                            },
+                            '& input::placeholder': {
+                              color: 'rgba(255, 255, 255, 0.4)',
+                              opacity: 1,
                             },
                           }}
                           placeholder="Enter your email"
                           InputProps={{
                             startAdornment: (
-                              <InputAdornment position="start">
+                              <InputAdornment position="start" sx={{ marginLeft: '4px' }}>
                                 <Email sx={{ color: '#60a5fa', fontSize: 20 }} />
                               </InputAdornment>
                             ),
@@ -620,12 +627,19 @@ export default function Login() {
                                   borderWidth: 2,
                                 },
                               },
+                              '& input': {
+                                paddingLeft: '14px',
+                              },
+                            },
+                            '& input::placeholder': {
+                              color: 'rgba(255, 255, 255, 0.4)',
+                              opacity: 1,
                             },
                           }}
                           placeholder="Enter your password"
                           InputProps={{
                             startAdornment: (
-                              <InputAdornment position="start">
+                              <InputAdornment position="start" sx={{ marginLeft: '4px' }}>
                                 <Lock sx={{ color: '#60a5fa', fontSize: 20 }} />
                               </InputAdornment>
                             ),
@@ -923,6 +937,7 @@ export default function Login() {
                               color: 'white',
                               fontSize: '1.05rem',
                               fontWeight: 500,
+                              paddingLeft: 0,
                               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                               '& fieldset': {
                                 borderColor: 'rgba(255, 255, 255, 0.25)',
@@ -944,27 +959,35 @@ export default function Login() {
                                   borderWidth: 2,
                                 },
                               },
+                              '& input': {
+                                paddingLeft: '12px',
+                              },
                             },
                             '& input::placeholder': {
                               color: 'rgba(255, 255, 255, 0.4)',
                               opacity: 1,
                             },
+                            '& .MuiInputAdornment-root': {
+                              marginRight: 0,
+                            },
                           }}
                           placeholder="Enter 10-digit mobile number"
                           InputProps={{
                             startAdornment: (
-                              <InputAdornment position="start">
+                              <InputAdornment position="start" sx={{ marginLeft: 0, marginRight: 0 }}>
                                 <Box
                                   sx={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: 1,
-                                    px: 1.5,
-                                    py: 0.75,
-                                    borderRadius: 2,
-                                    background: 'rgba(59, 130, 246, 0.15)',
+                                    px: 2,
+                                    py: 1.9,
+                                    ml: -0.1,
+                                    borderRadius: '10px 0 0 10px',
+                                    background: 'rgba(59, 130, 246, 0.2)',
                                     backdropFilter: 'blur(10px)',
-                                    border: '1px solid rgba(59, 130, 246, 0.3)',
+                                    borderRight: '1px solid rgba(59, 130, 246, 0.3)',
+                                    height: '100%',
                                   }}
                                 >
                                   <Phone sx={{ color: '#60a5fa', fontSize: 20 }} />
