@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Mock API base URL (replace with your actual API URL)
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.agritrack.com';
+// Base URL for API requests
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.fieldsync.com';
 
 // Create axios instance
 const api = axios.create({

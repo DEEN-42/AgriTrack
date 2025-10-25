@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"pages\\\\index.js -> ../components/farmer/MachineMap\":{\"id\":\"pages\\\\index.js -> ../components/farmer/MachineMap\",\"files\":[\"static/chunks/components_farmer_MachineMap_js.js\"]}}"

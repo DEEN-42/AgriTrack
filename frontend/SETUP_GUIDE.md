@@ -1,4 +1,4 @@
-# AgriTrack CRM - Quick Setup Guide
+# FieldSync - Quick Setup Guide
 
 ## ✅ Project Status: COMPLETE & RUNNING
 

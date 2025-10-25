@@ -88,7 +88,7 @@ const Layout = ({ children }) => {
             </Box>
             <Box>
               <Typography variant="h6" noWrap sx={{ fontWeight: 700, lineHeight: 1.2 }}>
-                AgriTrack CRM
+                FieldSync
               </Typography>
               <Typography variant="caption" sx={{ opacity: 0.9, lineHeight: 1 }}>
                 Government Monitoring Portal

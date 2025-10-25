@@ -1,4 +1,4 @@
-# AgriTrack CRM - Government Monitoring Portal
+# FieldSync - Government Monitoring Portal
 
 A comprehensive frontend-only application built with Next.js, React, Material-UI, Redux Toolkit, ECharts, and Leaflet for monitoring and managing agricultural machinery under the Custom Hiring Center (CHC) scheme.
 

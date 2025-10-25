@@ -68,7 +68,7 @@ export default function OwnerLayout({ children }) {
             WebkitTextFillColor: 'transparent',
           }}
         >
-          AgriTrack CRM
+          FieldSync
         </Typography>
         <Typography variant="caption" color="text.secondary">
           Owner Portal

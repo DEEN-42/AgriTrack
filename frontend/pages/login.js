@@ -276,7 +276,7 @@ export default function Login() {
                       WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    AgriTrack
+                    FieldSync
                   </Typography>
                 </Box>
                 <Typography
@@ -709,7 +709,7 @@ export default function Login() {
                           💡 Demo Credentials
                         </Typography>
                         <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.6)', display: 'block', fontFamily: 'monospace', fontSize: '0.75rem' }}>
-                          Email: admin@agritrack.com
+                          Email: admin@fieldsync.com
                         </Typography>
                         <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.6)', display: 'block', fontFamily: 'monospace', fontSize: '0.75rem' }}>
                           Password: admin123
@@ -1040,7 +1040,7 @@ export default function Login() {
               {/* Footer */}
               <Box sx={{ textAlign: 'center', mt: 4 }}>
                 <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem' }}>
-                  © 2025 AgriTrack CRM. All rights reserved.
+                  © 2025 FieldSync. All rights reserved.
                 </Typography>
               </Box>
             </Box>

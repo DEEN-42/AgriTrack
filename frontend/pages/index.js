@@ -125,7 +125,7 @@ function FarmerHome() {
                 letterSpacing: '-0.5px',
               }}
             >
-              AgriTrack
+              FieldSync
             </Typography>
 
             <Button
