@@ -1,0 +1,17 @@
+[
+  {"id":"CHC001","name":"Ludhiana Central CHC","state":"Punjab","district":"Ludhiana","machine_ids":["M001","M002","M021","M031"]},
+  {"id":"CHC002","name":"Amritsar North CHC","state":"Punjab","district":"Amritsar","machine_ids":["M003","M004","M022","M032"]},
+  {"id":"CHC003","name":"Panipat CHC","state":"Haryana","district":"Panipat","machine_ids":["M005","M006","M023","M033"]},
+  {"id":"CHC004","name":"Gurgaon Central CHC","state":"Haryana","district":"Gurgaon","machine_ids":["M007","M008","M024","M034"]},
+  {"id":"CHC005","name":"Agra West CHC","state":"UP","district":"Agra","machine_ids":["M009","M010","M025","M035"]},
+  {"id":"CHC006","name":"Bathinda CHC","state":"Punjab","district":"Bathinda","machine_ids":["M011","M012","M026","M036"]},
+  {"id":"CHC007","name":"Patiala South CHC","state":"Punjab","district":"Patiala","machine_ids":["M013","M014","M027","M037"]},
+  {"id":"CHC008","name":"Karnal CHC","state":"Haryana","district":"Karnal","machine_ids":["M015","M016","M028","M038"]},
+  {"id":"CHC009","name":"Sonipat East CHC","state":"Haryana","district":"Sonipat","machine_ids":["M017","M018","M029","M039"]},
+  {"id":"CHC010","name":"Aligarh CHC","state":"UP","district":"Aligarh","machine_ids":["M019","M020","M030","M040"]},
+  {"id":"CHC011","name":"Jalandhar CHC","state":"Punjab","district":"Jalandhar","machine_ids":["M041","M042"]},
+  {"id":"CHC012","name":"Faridabad CHC","state":"Haryana","district":"Faridabad","machine_ids":["M043","M044"]},
+  {"id":"CHC013","name":"Mathura CHC","state":"UP","district":"Mathura","machine_ids":["M045","M046"]},
+  {"id":"CHC014","name":"Moga CHC","state":"Punjab","district":"Moga","machine_ids":["M047","M048"]},
+  {"id":"CHC015","name":"Rohtak CHC","state":"Haryana","district":"Rohtak","machine_ids":["M049","M050"]}
+]
